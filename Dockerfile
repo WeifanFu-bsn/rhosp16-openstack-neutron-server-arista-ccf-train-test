@@ -9,7 +9,10 @@ LABEL name="rhosp16/openstack-neutron-server-arista-ccf" \
       description="Red Hat OpenStack Platform 16.1 neutron-server Arista Networks Converged Cloud Fabric ML2 Plugin"
 USER "root"
 
-ADD networking-bigswitch /tmp/networking-bigswitch
+#ADD networking-bigswitch /tmp/networking-bigswitch
+
+WORKDIR /tmp/
+RUN git clone netoworking-bigswitch --branch stable/train
 WORKDIR /tmp/networking-bigswitch
 RUN python3 setup.py install
 
