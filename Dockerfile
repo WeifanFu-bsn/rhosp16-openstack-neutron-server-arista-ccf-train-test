@@ -13,7 +13,7 @@ USER "root"
 
 RUN dnf install git -y
 WORKDIR /tmp/
-RUN git clone netoworking-bigswitch --branch stable/train
+RUN git clone https://opendev.org/x/networking-bigswitch.git --branch stable/train
 WORKDIR /tmp/networking-bigswitch
 RUN python3 setup.py install
 
