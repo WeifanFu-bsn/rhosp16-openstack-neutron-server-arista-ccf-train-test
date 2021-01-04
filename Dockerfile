@@ -11,6 +11,7 @@ USER "root"
 
 #ADD networking-bigswitch /tmp/networking-bigswitch
 
+RUN dnf install git -y
 WORKDIR /tmp/
 RUN git clone netoworking-bigswitch --branch stable/train
 WORKDIR /tmp/networking-bigswitch
